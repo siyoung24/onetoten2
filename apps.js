@@ -2248,7 +2248,7 @@ K.apps.mail = { mount(root,p,ctl){
 })();
 
 
-/* =================== 마포한강래미안 (아파트 주민 앱 · 세대원 모드) =================== */
+/* =================== 마포한강래미안 (아파트 주민 앱 · 세대주 모드) =================== */
 K.apps.mapo = { mount(root,p,ctl){
   ctl.bar(true);
   const pg=K.page(); pg.classList.add('mp'); root.append(pg);
@@ -2307,7 +2307,7 @@ K.apps.mapo = { mount(root,p,ctl){
    <section class="mp-pg" id="mp-svc">
      <div class="mp-ls2">
        <button data-go="car"><span>${S('<path d="M5 16V12l1.600-4.200A2 2 0 0 1 8.500 6.500h7a2 2 0 0 1 1.900 1.300L19 12v4"/><path d="M3.500 12h17v4.500h-17z"/>',22)}</span>차량 관리 (디지털 정기권)<i>›</i></button>
-       <button class="mp-lk2" data-vis><span>${S('<path d="M3 12l2-4h9l2 4"/><circle cx="7" cy="14" r="2"/><circle cx="14" cy="14" r="2"/>',22)}</span>방문 차량 관리<em>${LK}</em></button>
+       <button data-vis><span>${S('<path d="M3 12l2-4h9l2 4"/><circle cx="7" cy="14" r="2"/><circle cx="14" cy="14" r="2"/>',22)}</span>방문 차량 관리<i>›</i></button>
        <button data-go="fee"><span>${S('<rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/>',22)}</span>관리비 조회/납부<i>›</i></button>
        <button data-go="notice"><span>${S('<path d="M4 11v3a1 1 0 0 0 1 1h2l5 4V6L7 10H5a1 1 0 0 0-1 1z"/><path d="M16 9a4 4 0 0 1 0 6"/>',22)}</span>공지사항 / 주민 투표·설문<i>›</i></button>
        <button data-dead><span>${S('<rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/>',22)}</span>커뮤니티 시설 예약<i>›</i></button>
@@ -2317,17 +2317,15 @@ K.apps.mapo = { mount(root,p,ctl){
    </section>
 
    <section class="mp-pg" id="mp-my">
-     <div class="mp-card"><div class="mp-li"><span>동 · 호수</span><b>마포한강래미안 105동 1704호</b></div><div class="mp-li"><span>이용자 구분</span><b>세대원</b></div><div class="mp-li"><span>등록 차량</span><b>BMW X7 (776더 0116)</b></div></div>
-     <div class="mp-lockn"><span style="display:flex;width:15px">${LK}</span>차량 추가·삭제, 정기권 변경은 세대주만 할 수 있어요</div>
+     <div class="mp-card"><div class="mp-li"><span>동 · 호수</span><b>마포한강래미안 105동 1704호</b></div><div class="mp-li"><span>이용자 구분</span><b>세대주</b></div><div class="mp-li"><span>등록 차량</span><b>BMW X7 (776더 0116)</b></div></div>
    </section>
 
    <section class="mp-pg" id="mp-car">
-     <div class="mp-sub" data-sub="car"><button class="lock" data-vis>방문차량 관리<svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></button><button class="on" data-st="pass">디지털 정기권</button><button data-st="log">입출차 내역</button></div>
+     <div class="mp-sub" data-sub="car"><button data-vis>방문차량 관리</button><button class="on" data-st="pass">디지털 정기권</button><button data-st="log">입출차 내역</button></div>
      <div class="mp-st-pg on" id="mp-st-pass">
        <div class="mp-pass"><div class="h"><b>PARKING PASS</b><span>정기권 사용 중</span></div><div class="mp-plate">776더 0116</div><div class="car"><b>BMW X7</b>세대주 명의</div>
          <div class="rw"><div><span>동 · 호수</span><b>105동 1704호</b></div><div><span>등록 일자</span><b>2022.09.06.</b></div><div><span>주차 구역</span><b>지하 1~3층 입주민</b></div><div><span>등록 구분</span><b>세대주 차량</b></div></div></div>
-       <div class="mp-btns"><button class="mp-bt" disabled>차량 추가</button><button class="mp-bt" disabled>차량 삭제</button><button class="mp-bt w" disabled>정기권 변경</button></div>
-       <div class="mp-lockn"><span style="display:flex;width:15px">${LK}</span>세대주만 변경 가능한 항목입니다</div>
+       <div class="mp-btns"><button class="mp-bt">차량 추가</button><button class="mp-bt">차량 삭제</button><button class="mp-bt w">정기권 변경</button></div>
      </div>
      <div class="mp-st-pg" id="mp-st-log" style="display:none">
        ${OUT?'<div class="mp-vi"><div class="t1"><span class="mp-st n">출차</span><small style="margin:0">오늘 '+OUT+'</small></div><b class="pl">776더 0116</b><p>BMW X7 · 정문 출구</p></div>':''}
@@ -2356,7 +2354,7 @@ K.apps.mapo = { mount(root,p,ctl){
      <div class="mp-fee"><div class="mp-row"><div><div class="ym">2026년 5월 청구분</div><div class="big">284,500원</div></div><span class="bd">납부 전</span></div><div class="dt"><span>청구일: 2026.06.10</span><span>납기일: 2026.06.25</span></div></div>
      <div class="mp-card"><div class="mp-h" style="font-size:14px">항목별 상세 내역</div>
        <div class="mp-li"><span>공용관리비 (청소, 경비, 소독 등)</span><b>112,000원</b></div><div class="mp-li"><span>개인사용 (전기요금)</span><b>75,400원</b></div><div class="mp-li"><span>개인사용 (수도요금)</span><b>32,100원</b></div><div class="mp-li"><span>난방 및 온수요금</span><b>65,000원</b></div></div>
-     <button class="mp-cta" data-toast="관리비 납부는 세대주만 할 수 있어요">신용카드 간편결제 / 가상계좌 납부</button>
+     <button class="mp-cta" data-toast="납부 화면으로 이동해요">신용카드 간편결제 / 가상계좌 납부</button>
    </section>
   </main>
   <nav class="mp-tabs">${TABS.map((t,i)=>`<button class="mp-tab${i?'':' on'}" ${t[0]==='comm'?'data-dead':'data-go="'+t[0]+'"'}>${t[2]}${t[1]}</button>`).join('')}</nav>
@@ -2374,8 +2372,8 @@ K.apps.mapo = { mount(root,p,ctl){
   const sp=Q('#mp-splash'); setTimeout(()=>sp.classList.add('out'),1500); setTimeout(()=>sp.remove(),2200);
   pg.addEventListener('click',e=>{
     if(e.target.closest('[data-dead]')){ e.preventDefault(); e.stopPropagation(); return; }
-    if(e.target.closest('[data-vis]')){ toast('방문차량 관리는 이용할 수 없어요'); return; }
-    if(e.target.closest('.mp-bt')){ toast('세대주만 변경 가능한 항목입니다'); return; }
+    if(e.target.closest('[data-vis]')){ toast('등록된 방문 차량이 없어요'); return; }
+    const bt=e.target.closest('.mp-bt'); if(bt){ toast(bt.textContent+' 화면으로 이동해요'); return; }
     const lb=e.target.closest('#mp-l'); if(lb){ if(lb.dataset.back) go(lb.dataset.back); return; }
     const fb=e.target.closest('[data-fac]'); if(fb){ QA('.mp-fb').forEach(b=>b.classList.toggle('on',b===fb)); if(fb.dataset.fac==='게스트하우스') toast('게스트하우스는 이번 주 예약이 마감됐어요'); return; }
     const dy=e.target.closest('[data-day]'); if(dy){ QA('#mp-wk button').forEach(b=>b.classList.toggle('on',b===dy)); return; }
