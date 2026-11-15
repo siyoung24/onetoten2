@@ -4,7 +4,7 @@
    - 연락처: 소설에 나오는 이름만(번호는 모르므로 비움)
    - 나머지 항목은 확인된 정보가 없어 비워 둠 */
 window.PHONE_DATA = {
- "version": 2,
+ "version": 3,
  "triggers": {},
  "sentMails": [],
  "settings": {
@@ -35,10 +35,11 @@ window.PHONE_DATA = {
   ],
   "openableApps": [
    "kakao",
-   "phone"
+   "phone",
+   "music"
   ],
   "readOnly": true,
-  "passcode": "",
+  "passcode": "241011",
   "notesLock": "",
   "mailLock": "",
   "mailAccount": "",
@@ -2198,11 +2199,104 @@ window.PHONE_DATA = {
   "channels": []
  },
  "playlist": {
-  "name": "",
-  "desc": "",
-  "tracks": []
+  "name": "박성진 꺼",
+  "desc": "강영현이 만든 플레이리스트 · 14곡",
+  "tracks": [
+   {
+    "t": "태양계 (Solar System)",
+    "a": "성시경",
+    "d": "",
+    "cv": "photos/album-cover.jpg",
+    "lx": "photos/music/album-cover.txt",
+    "link": "https://youtu.be/J6J3SgFhXxA"
+   },
+   {
+    "t": "날 사랑하는 너에게",
+    "a": "hiko",
+    "d": "3:18",
+    "cv": "photos/music/toyou.jpg"
+   },
+   {
+    "t": "그날의 우리의 색은 진하지 않은 주황색",
+    "a": "바스바오",
+    "d": "3:33",
+    "cv": "photos/music/orangecolor.jpg"
+   },
+   {
+    "t": "Happening (feat. THAMA & DeVita)",
+    "a": "Cosmic Boy",
+    "d": "3:45",
+    "cv": "photos/music/happening.jpg"
+   },
+   {
+    "t": "말버릇",
+    "a": "hiko",
+    "d": "4:16",
+    "cv": "photos/music/habit.jpg"
+   },
+   {
+    "t": "Everyday",
+    "a": "죠지",
+    "d": "3:45",
+    "cv": "photos/music/everyday.jpg"
+   },
+   {
+    "t": "깨우지 않을게 (feat. PH-1)",
+    "a": "Meenoi",
+    "d": "3:37",
+    "cv": "photos/music/ph-1.jpg"
+   },
+   {
+    "t": "사랑이었나봐 (feat. 지소울)",
+    "a": "썸데프",
+    "d": "3:27",
+    "cv": "photos/music/itwas.jpg"
+   },
+   {
+    "t": "I don't wanna lose",
+    "a": "성진",
+    "d": "3:28",
+    "cv": "photos/music/idontwannalose.jpg"
+   },
+   {
+    "t": "기대",
+    "a": "거니",
+    "d": "3:15",
+    "cv": "photos/music/gonny.jpg"
+   },
+   {
+    "t": "Need you",
+    "a": "SOLE & 성시경",
+    "d": "4:01",
+    "cv": "photos/music/needyou.jpg"
+   },
+   {
+    "t": "멈춰있을게 (Picture)",
+    "a": "homezone",
+    "d": "3:20",
+    "cv": "photos/music/picture.jpg"
+   },
+   {
+    "t": "그만큼만",
+    "a": "Meenoi",
+    "d": "3:50",
+    "cv": "photos/music/mennoi.jpg"
+   },
+   {
+    "t": "책을 넘기는 듯한 마음으로",
+    "a": "homezone",
+    "d": "3:13",
+    "cv": "photos/music/nextpage.jpg"
+   }
+  ]
  },
- "viewOnlyPlaylists": [],
+ "viewOnlyPlaylists": [
+  {
+   "name": "성진이형 러닝 플레이리스트",
+   "desc": "강영현이 만든 플레이리스트",
+   "tracks": []
+  }
+ ],
  "notifications": [],
  "ddays": [],
  "searches": [],
