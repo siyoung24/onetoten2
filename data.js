@@ -1,6 +1,7 @@
 /* 박성진의 휴대폰 — 데이터 파일
    확실한 정보만 넣습니다. 수정 후에는 version 숫자를 올려 주세요.
    - 카톡: 강영현과의 대화(강영현 폰 기준 대화를 보낸 사람만 뒤집은 것)
+   - 연락처: 소설에 나오는 이름만(번호는 모르므로 비움)
    - 나머지 항목은 확인된 정보가 없어 비워 둠 */
 window.PHONE_DATA = {
  "version": 1,
@@ -52,6 +53,32 @@ window.PHONE_DATA = {
  },
  "contacts": [
   {
+   "id": "gy",
+   "name": "공여선",
+   "phone": "",
+   "org": "이모, 정유출판사 작가",
+   "note": "",
+   "fav": false,
+   "kakaoStatus": "",
+   "color": [
+    "#f9d0d6",
+    "#f4a8b4"
+   ]
+  },
+  {
+   "id": "sk",
+   "name": "김선규",
+   "phone": "",
+   "org": "작가",
+   "note": "",
+   "fav": false,
+   "kakaoStatus": "",
+   "color": [
+    "#bcd7f7",
+    "#86b1ea"
+   ]
+  },
+  {
    "id": "yh",
    "name": "영현이",
    "phone": "010-1993-1219",
@@ -63,10 +90,68 @@ window.PHONE_DATA = {
     "#bcd7f7",
     "#86b1ea"
    ]
+  },
+  {
+   "id": "jh",
+   "name": "유주희",
+   "phone": "",
+   "org": "신현카드",
+   "note": "",
+   "fav": false,
+   "kakaoStatus": "",
+   "color": [
+    "#e6d3c3",
+    "#c9a98f"
+   ]
+  },
+  {
+   "id": "dw",
+   "name": "윤도운",
+   "phone": "",
+   "org": "사촌동생",
+   "note": "",
+   "fav": false,
+   "kakaoStatus": "",
+   "color": [
+    "#d8d0f5",
+    "#aa9ae6"
+   ]
+  },
+  {
+   "id": "hj",
+   "name": "정현지",
+   "phone": "",
+   "org": "친구",
+   "note": "",
+   "fav": false,
+   "kakaoStatus": "",
+   "color": [
+    "#c9ecd3",
+    "#8fd3a6"
+   ]
+  },
+  {
+   "id": "sg2",
+   "name": "홍슬기",
+   "phone": "",
+   "org": "친구",
+   "note": "",
+   "fav": false,
+   "kakaoStatus": "",
+   "color": [
+    "#fde3b8",
+    "#f5c37a"
+   ]
   }
  ],
  "kakaoFriends": [
-  "yh"
+  "yh",
+  "gy",
+  "dw",
+  "hj",
+  "sg2",
+  "sk",
+  "jh"
  ],
  "calls": [],
  "chats": [

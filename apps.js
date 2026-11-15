@@ -1049,7 +1049,7 @@ K.apps.safari = { mount(root,p,ctl){
     h('div',{class:'sfpill',onclick:()=>{ if(!host) openSearch(); }},h('span',{class:'sfi',html:SVG(PAGEIC,22,'#111',1.8)}),h('span',{class:'sfq'+(host?'':' ph')},host||'검색 또는 웹 사이트 이름 입력'),host?h('span',{class:'sfr',html:RELOAD}):h('span',{class:'sfr'})),
     h('i',{class:'sfc',onclick:()=>menu(),html:SVG(TABSIC,22,'#111',1.8)}));
   const FAV=[['Apple','photos/fav/apple.png'],['구글','photos/fav/google.png'],['네이버','photos/fav/naver.png'],['유튜브','photos/fav/youtube.png'],
-    ['쿠팡','photos/fav/coupang.png'],['신현카드','photos/shcard-icon.jpg'],['정유출판사','photos/pub-icon.jpg'],['Blind','photos/fav/blind.png']];
+    ['쿠팡','photos/fav/coupang.png'],['정유출판사','photos/pub-icon.jpg']];
   function start(){ sc.innerHTML='';
     sc.append(h('div',{style:'height:64px'}),h('div',{class:'sfsec'},'즐겨찾기'),
       h('div',{class:'sffav'},...FAV.map(([n,bg,ic])=>h('div',{class:'sff',onclick:()=>{ if(n==='Blind') pageBlind(); else if(n==='유튜브') K.openApp('youtube'); else if(n==='정유출판사') K.openApp('pub'); }},ic?h('i',{style:'background:'+bg,html:ic}):h('i',{class:'img',style:'background:#f2f2f7 url('+bg+') center/cover no-repeat'}),h('span',{},n)))),

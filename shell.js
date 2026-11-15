@@ -81,7 +81,7 @@ K.applyWallpapers();
 const home = $('#home');
 const DOCK = ['phone','safari','messages','kakao'];
 const PAGE1 = ['calendar','photos','music','camera'];
-const PAGE2 = ['clock','mail','weather','youtube','instagram','safari','notes','settings','pub','shcard','mapo'];
+const PAGE2 = ['clock','mail','weather','youtube','instagram','safari','notes','settings','pub','mapo'];
 const badgeFor = id => {
   if(id==='kakao'){ const n=S().chats.reduce((a,c)=>a+c.msgs.filter(m=>m.unread&&m.from!=='me').length,0); return n; }
   if(id==='phone'){ return 0; }
