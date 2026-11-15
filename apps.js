@@ -670,8 +670,8 @@ K.apps.camera = { mount(root,p,ctl){ ctl.bar(false);
   const flipI=sv('<path d="M20 11a8 8 0 0 0-14-4.500L4 9M4 4v5h5M4 13a8 8 0 0 0 14 4.500L20 15M20 20v-5h-5"/>',{s:28,w:2});
   const expI=sv('<path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/>',{s:24,w:2});
   const stage=h('div',{class:'cm-st'});
-  const img=h('img',{class:'cm-img',src:'photos/cam-front.jpg',alt:''});
-  const img2=h('img',{class:'cm-img',src:'photos/cam-rear.jpg',alt:'',style:'object-position:40% 50%'}), flash=h('div',{class:'cm-fl'});
+  const img=h('img',{class:'cm-img',src:"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23000'/%3E%3C/svg%3E",alt:''});
+  const img2=h('img',{class:'cm-img',src:"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23000'/%3E%3C/svg%3E",alt:'',style:'object-position:40% 50%'}), flash=h('div',{class:'cm-fl'});
   const vf=h('div',{class:'cm-vf'},img,img2,h('div',{class:'cm-grid'}),h('div',{class:'cm-lv'},h('i',{class:'a'}),h('i',{class:'b'}),h('i',{class:'c'})),flash);
   const top=h('div',{class:'cm-top'}), zm=h('div',{class:'cm-zm'}), lft=h('div',{class:'cm-b cm-l'}), thumb=h('div',{class:'cm-th'});
   const pill=h('div',{class:'cm-pill'});
@@ -694,7 +694,7 @@ K.apps.settings = { mount(root,p,ctl){
   ctl.bar(true);
   const nav=K.makeNav(root); const main=K.page(); main.classList.add('ss'); const sc=h('div',{class:'scroll'}); main.append(padTop(),sc);
   const U=()=>S().ui, owner=()=>U().ownerName||D.settings.ownerName||'박성진';
-  const EMAIL='briankang@gmail.com';
+  const EMAIL='';
   const CH='<svg width="8" height="14" viewBox="0 0 8 14"><path d="M1 1l6 6-6 6" fill="none" stroke="#c4c4c9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   const G=(d,o={})=>`<svg viewBox="${o.vb||'0 0 24 24'}" width="21" height="21" fill="${o.fill===undefined?'#fff':o.fill}" stroke="${o.st||'none'}" stroke-width="${o.sw||2}" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
   const S2=(d,sw=1.9)=>G(d,{fill:'none',st:'#fff',sw});
@@ -779,7 +779,7 @@ K.apps.settings = { mount(root,p,ctl){
     s.append(h('div',{class:'ssav'},h('div',{class:'pbig'},[...owner()][0]||'강'),h('b',{},owner()),h('small',{},EMAIL)),
       card(row(ic('idcard',GR),'개인정보',undefined,null),
            row(ic('shield',GR),'로그인 및 보안',undefined,null),
-           row(ic('card',GR),'결제 및 배송','SHINHYUN',null),
+           row(ic('card',GR),'결제 및 배송','',null),
            row(ic('sub',GR),'구독',undefined,null)),
       card(devRow(phoneImg,owner()+'의 iPhone','이 iPhone',devPage(owner()+'의 iPhone','이 iPhone')),
            devRow(padImg,owner()+'의 iPad','iPad Air',devPage(owner()+'의 iPad','iPad Air'))));
@@ -1477,11 +1477,11 @@ K.apps.youtube = { mount(root,p,ctl){
   const fmtV=n=>n>=1e8?(n/1e8).toFixed(1).replace(/\.0$/,'')+'억':n>=1e4?(n>=1e5?Math.round(n/1e4):(n/1e4).toFixed(1).replace(/\.0$/,''))+'만':n>=1e3?(n/1e3).toFixed(1).replace(/\.0$/,'')+'천':String(n);
   const AGO=['6일 전','2주 전','3주 전','1개월 전','2개월 전','5개월 전','1년 전','2년 전'];
   const COL=['#7aa7ff','#3ddc97','#ffb86b','#c792ea','#ff7a90','#5fd0d6'];
-  const Y=D.youtube||{}, me=Y.me||{name:'강영현',handle:'@'+((D.instagram&&D.instagram.handle)||'kangyh').replace(/^@/,'')};
+  const Y=D.youtube||{}, me=Y.me||{name:'박성진',handle:'@'+((D.instagram&&D.instagram.handle)||'').replace(/^@/,'')};
   const vids=(Y.videos||D.playlist.tracks.map(t=>({t:t.t,ch:t.a,cv:t.cv,dur:t.d||'3:30'}))).map(v=>{ const hs=hash(v.t+(v.ch||'')); return {...v, views:v.views!=null?v.views:(hs%97)*10000+(hs%9)*1000+20000, ago:v.ago||AGO[hs%AGO.length], col:COL[hs%COL.length], likes:v.likes!=null?v.likes:(hs%900)+30, cm:(hs%40)+2}; });
   const go=v=>{ if(v.jm&&K.jmSawVideo) K.jmSawVideo(); if(v.watch){ wv=v; render(); return; } if(v.ytLink) window.open(v.ytLink,'_blank','noopener'); };   // 유튜브 안의 영상은 data.js에서 ytLink를 직접 적은 것만 열려요 (안 적으면 눌러도 아무 일 없음)
   const avatar=(v,sz)=>h('i',{class:'yav',style:`width:${sz}px;height:${sz}px;background:${v.col||'#7aa7ff'};font-size:${Math.round(sz*.42)}px`},(v.ch||'?').trim().charAt(0).toUpperCase());
-  const meAv=sz=>h('i',{class:'yav',style:`width:${sz}px;height:${sz}px;background:#6b5bd6;color:#fff;font-size:${Math.round(sz*.5)}px;font-weight:500`},'강');
+  const meAv=sz=>h('i',{class:'yav',style:`width:${sz}px;height:${sz}px;background:#6b5bd6;color:#fff;font-size:${Math.round(sz*.5)}px;font-weight:500`},[...(K.state.ui.ownerName||'박성진')][0]);
   const thumb=v=>v.pic?h('div',{class:'yth pic',style:`background-image:url(${v.cv})`},v.dur?(/플레이리스트/.test(v.t)?h('span',{class:'ydur pl',html:'<svg viewBox="0 0 24 24" width="15" height="15" fill="#fff"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3z"/></svg>'+v.dur}):h('span',{class:'ydur'},v.dur)):null,v.prog?h('div',{class:'yprog'},h('i',{style:`width:${v.prog}%`})):null):v.full?h('div',{class:'yth full',style:`background-image:url(${v.cv})`}):v.bg?h('div',{class:'yth'},h('div',{class:'ybgt',style:`background:${v.bg};color:${v.fg||'#0b0b0b'}`},v.big||''),h('span',{class:'ydur'},v.dur||'3:30')):h('div',{class:'yth'},h('div',{class:'ybg',style:`background-image:url(${v.cv||''})`}),h('div',{class:'ysq',style:`background-image:url(${v.cv||''})`}),h('span',{class:'ydur'},v.dur||'3:30'));
   const more=(v)=>h('button',{class:'ymore',html:IC.dots,onclick:e=>{e.stopPropagation(); K.sheet(v.t,[{t:'나중에 볼 동영상에 저장',fn:()=>K.toast('나중에 볼 동영상에 저장했어요')},{t:'공유',fn:()=>K.toast('링크를 복사했어요')},{t:'관심 없음',fn:()=>K.toast('이 동영상을 숨겼어요')}]);}});
   const meta=v=>v.ch+(v.views===0?'  ':'  ▷'+fmtV(v.views)+'  ')+v.ago;
@@ -1603,7 +1603,7 @@ K.apps.youtube = { mount(root,p,ctl){
         sc.append(h('div',{style:'height:130px'})); return; }
       if(libPage!==null){
         const L=LIBS[libPage]; const vs=allVids().filter(v=>[].concat(v.lib||[]).includes(L.key)).sort((a,b)=>AGDAYS(a.ago)-AGDAYS(b.ago));
-        sc.append(h('div',{class:'ylhd'},h('div',{class:'ylcv',style:`background-image:url(${(vs[0]&&vs[0].cv)||''})`}),h('div',{class:'ylht'},L.name),h('small',{},'강영현 · 비공개 · 동영상 '+vs.length+'개')));
+        sc.append(h('div',{class:'ylhd'},h('div',{class:'ylcv',style:`background-image:url(${(vs[0]&&vs[0].cv)||''})`}),h('div',{class:'ylht'},L.name),h('small',{},me.name+' · 비공개 · 동영상 '+vs.length+'개')));
         vs.forEach(v=>sc.append(h('div',{class:'ylrow',onclick:()=>go(v)},thumb(v),h('div',{class:'ylrt'},h('div',{class:'ylrn'},v.t),h('div',{class:'ylrs'},v.ch)),more(v))));
         sc.append(h('div',{style:'height:130px'})); return; }
       if(chPage!==null){ chanPage(sc,CHS[chPage]); return; }
