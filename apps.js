@@ -548,7 +548,7 @@ K.apps.calendar = { mount(root, p, ctl){
   const evsOf = d => S().events.filter(e=>K.dayDiff(e.ts,d)===0).sort((a,b)=>a.ts-b.ts);
   function render(){
     pg.innerHTML='';
-    pg.append(padTop(), h('div',{class:'navbar'},h('button',{style:'color:#ff3b30;font-size:17px',onclick:()=>{m--;if(m<0){m=11;y--;}render();}},'‹ '+(m===0?12:m)+'월'),h('div',{}),h('button',{style:'color:#ff3b30',onclick:()=>{m++;if(m>11){m=0;y++;}render();}},((m+2)>12?1:m+2)+'월 ›')),
+    pg.append(padTop(), h('div',{class:'navbar'},h('button',{style:'color:#ff3b30;font-size:17px',onclick:()=>K.closeApp()},'‹ 홈'),h('div',{}),h('div',{style:'display:flex;gap:18px'},h('button',{style:'color:#ff3b30',onclick:()=>{m--;if(m<0){m=11;y--;}render();}},'‹ '+(m===0?12:m)+'월'),h('button',{style:'color:#ff3b30',onclick:()=>{m++;if(m>11){m=0;y++;}render();}},((m+2)>12?1:m+2)+'월 ›'))),
       h('div',{class:'mt'},h('h1',{},(m+1)+'월'),h('span',{style:'color:#ff3b30;font-size:17px'},y+'년')),
       h('div',{class:'wk'},K.DOW.map(d=>h('span',{},d))));
     const first=new Date(y,m,1), start=new Date(y,m,1-first.getDay()), grid=h('div',{class:'mg'});
@@ -755,7 +755,7 @@ K.apps.settings = { mount(root,p,ctl){
     const bk=h('button',{class:'ssbk',onclick:()=>nav.pop(),html:'<svg viewBox="0 0 12 20" width="12" height="20"><path d="M10 2 2 10l8 8" fill="none" stroke="#111" stroke-width="2.600" stroke-linecap="round" stroke-linejoin="round"/></svg>'});
     pg.append(padTop(),tb,bk,s2);
     s2.append(h('div',{style:'height:'+(hd?'88':'64')+'px'}));
-    if(hd) s2.append(h('div',{class:'ssg sshd'},h('div',{class:'ssi big',style:'background:'+hd.bg,html:ICON[hd.k]}),h('b',{},title),h('p',{},hd.desc||''),...(hd.extra||[])));
+    if(hd) s2.append(h('div',{class:'ssg sshd'},h('div',{class:'ssi big',style:'background:'+hd.bg,html:ICON[hd.k]}),h('b',{},title),h('p',{html:hd.desc||''}),...(hd.extra||[])));
     if(hd) s2.addEventListener('scroll',()=>tb.classList.toggle('hid',s2.scrollTop<110));
     build(s2); s2.append(h('div',{style:'height:100px'})); nav.push(pg);
   }
@@ -807,7 +807,7 @@ K.apps.settings = { mount(root,p,ctl){
     const t=tg('bt',()=>{ draw(); const v=main.querySelector('[data-k="bt"]'); if(v) v.textContent=U().bt?'켬':'끔'; });
     const hdrCard=s.querySelector('.sshd'); hdrCard.append(h('div',{class:'ssline'}),h('div',{class:'ssr tgr'},h('div',{class:'ssl'},'Bluetooth'),t));
     draw(); s.append(box);
-  },{k:'bt',bg:'linear-gradient(#5aa7f7,#1f6fe0)',desc:'음악 스트리밍, 전화 통화 및 게임과 같은 활동에 사용할 수 있는 액세서리에 연결하십시오. 더 알아보기…'});
+  },{k:'bt',bg:'linear-gradient(#5aa7f7,#1f6fe0)',desc:'음악 스트리밍, 전화 통화 및 게임과 같은 활동에 사용할 수 있는 액세서리에 연결하십시오.<br>더 알아보기…'});
   /* ---- 셀룰러 ---- */
   const pCell=()=>sub('셀룰러',s=>{
     s.append(card(h('div',{class:'ssr'},h('div',{class:'ssl'},'셀룰러 데이터'),tg('cell',()=>{ const v=main.querySelector('[data-k="cell"]'); if(v) v.textContent=''; }))),
@@ -973,7 +973,7 @@ K.apps.clock = { mount(root,p,ctl){
   let tab='alarm';
   const ICO={world:'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM2.500 12h19M12 2c3 3 4.500 6.500 4.500 10S15 19 12 22M12 2C9 5 7.500 8.500 7.500 12S9 19 12 22',alarm:'M12 6v6l4 2M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16zM4 6l3-3M20 6l-3-3',stop:'M12 5a8 8 0 1 0 0 16 8 8 0 0 0 0-16zM12 9v5M9.500 2h5M12 2v3',timer:'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 7v5l-3 3'};
   const TABS=[['world','세계 시각'],['alarm','알람'],['stop','스톱워치'],['timer','타이머']];
-  const CITIES=[['토론토','캐나다','America/Toronto'],['아테네','그리스','Europe/Athens'],['런던','영국','Europe/London']];
+  const CITIES=[['서울','대한민국','Asia/Seoul']];
   const off=(tz,d)=>{ const f=z=>Date.parse(d.toLocaleString('en-US',{timeZone:z})); return Math.round((f(tz)-f('Asia/Seoul'))/36e5); };
   const dayStr=(tz,d)=>d.toLocaleDateString('en-CA',{timeZone:tz});
   const big=t=>h('div',{class:'cl-large'},t);
