@@ -4,7 +4,7 @@
    - 연락처: 소설에 나오는 이름만(번호는 모르므로 비움)
    - 나머지는 강영현의 폰 내용 중 영현 기준이 아닌 것만 사용 */
 window.PHONE_DATA = {
- "version": 10,
+ "version": 11,
  "triggers": {},
  "sentMails": [],
  "settings": {
@@ -43,7 +43,6 @@ window.PHONE_DATA = {
    "mail",
    "weather",
    "settings",
-   "youtube",
    "mapo",
    "camera",
    "calendar"
