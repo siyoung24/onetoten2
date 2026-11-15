@@ -4,7 +4,7 @@
    - 연락처: 소설에 나오는 이름만(번호는 모르므로 비움)
    - 나머지는 강영현의 폰 내용 중 영현 기준이 아닌 것만 사용 */
 window.PHONE_DATA = {
- "version": 11,
+ "version": 12,
  "triggers": {},
  "sentMails": [],
  "settings": {
@@ -12,25 +12,16 @@ window.PHONE_DATA = {
   "englishName": "",
   "disabledApps": [],
   "storyToday": "2026-10-30",
-  "wallpaperDefault": 2,
+  "wallpaperDefault": 0,
   "wallpapers": [
    {
-    "lock": "photos/wall-night.jpg"
+    "lock": "photos/ios-wall1.jpg"
    },
    {
-    "lock": "photos/wall-sunset1.jpg"
+    "lock": "photos/ios-wall2.jpg"
    },
    {
-    "lock": "photos/wall-sunset2.jpg"
-   },
-   {
-    "lock": "photos/wallpaper1.jpg"
-   },
-   {
-    "lock": "photos/wallpaper2.jpg"
-   },
-   {
-    "lock": "photos/wallpaper3.jpg"
+    "lock": "photos/ios-wall3.jpg"
    }
   ],
   "openableApps": [
@@ -56,7 +47,7 @@ window.PHONE_DATA = {
   "carrier": "",
   "battery": 74,
   "statusMessage": "",
-  "profileBg": "photos/wall-sunset1.jpg",
+  "profileBg": "photos/ios-wall1.jpg",
   "fixedToday": "2026-11-11",
   "fixedTime": null,
   "fixedNow": null
