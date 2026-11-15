@@ -53,7 +53,7 @@ window.PHONE_DATA = {
  "contacts": [
   {
    "id": "yh",
-   "name": "강영현",
+   "name": "영현이",
    "phone": "010-1993-1219",
    "org": "",
    "note": "",
@@ -73,7 +73,7 @@ window.PHONE_DATA = {
   {
    "id": "c_yh",
    "with": "yh",
-   "title": "강영현",
+   "title": "영현이",
    "pinned": true,
    "msgs": [
     {
