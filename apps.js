@@ -494,7 +494,7 @@ K.apps.notes = { mount(root, p, ctl){
   function fRender(){
     mine.innerHTML=''; fg.innerHTML='';
     S().notes.filter(n=>!n.folder).sort((x,y)=>y.ts-x.ts).forEach(n=>mine.append(h('div',{class:'nrow',onclick:()=>{ list._cur={_r:fRender}; edit(n); }},h('div',{class:'in'},h('b',{},titleOf(n)),h('p',{},h('em',{},K.dayDiff(K.now(),n.ts)===0?K.hm(n.ts):K.listTime(n.ts)),restOf(n)||'추가 텍스트 없음')))));
-    fg.append(mkFold(FOLD,S().notes.filter(n=>n.folder===FOLD).length,FOLD), h('div',{class:'fold',onclick:()=>list('최근 삭제된 항목','최근 삭제된 항목')},h('span',{html:'<svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7zM9 7V4h6v3"/></svg>'}),'최근 삭제된 항목',h('span',{class:'c'},S().notes.filter(n=>n.folder==='최근 삭제된 항목').length+' ›')));
+    fg.append(h('div',{class:'fold',onclick:()=>list('최근 삭제된 항목','최근 삭제된 항목')},h('span',{html:'<svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7zM9 7V4h6v3"/></svg>'}),'최근 삭제된 항목',h('span',{class:'c'},S().notes.filter(n=>n.folder==='최근 삭제된 항목').length+' ›')));
   }
   fRender();
   function list(name,key){
