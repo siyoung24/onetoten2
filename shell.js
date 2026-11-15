@@ -494,7 +494,7 @@ function renderCC(){
     const old=cc.querySelector('.ccnet'); if(old) old.remove();
     const ov=h('div',{class:'ccnet'},
       h('div',{class:'wide'},row(IC.air,'w','에어플레인 모드',u.airplane?'켬':'끔','airplane')),
-      h('div',{class:'two'},row(IC.wifi,'t','Wi-Fi',u.wifi?'mangwon_rem_1704 ⌃⌄':'꺼짐','wifi'),row(IC.hot,'t airdrop','AirDrop','연락처만 ⌃⌄',null)),
+      h('div',{class:'two'},row(IC.wifi,'t','Wi-Fi',u.wifi?' ⌃⌄':'꺼짐','wifi'),row(IC.hot,'t airdrop','AirDrop','연락처만 ⌃⌄',null)),
       h('div',{class:'two'},row(IC.cell,'t','셀룰러 데이터',u.cell?'OneToTen':'꺼짐','cell'),row(IC.bt,'t','Bluetooth',u.bt?'켬 ⌃⌄':'끔 ⌃⌄','bt')),
       h('div',{class:'wide'},row(IC.link,'w','개인용 핫스팟','끔',null)),
       h('div',{class:'wide'},row(IC.globe,'w','VPN','끔',null)));

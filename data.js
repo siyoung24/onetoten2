@@ -4,7 +4,7 @@
    - 연락처: 소설에 나오는 이름만(번호는 모르므로 비움)
    - 나머지 항목은 확인된 정보가 없어 비워 둠 */
 window.PHONE_DATA = {
- "version": 3,
+ "version": 5,
  "triggers": {},
  "sentMails": [],
  "settings": {
@@ -36,7 +36,16 @@ window.PHONE_DATA = {
   "openableApps": [
    "kakao",
    "phone",
-   "music"
+   "music",
+   "safari",
+   "notes",
+   "clock",
+   "mail",
+   "weather",
+   "settings",
+   "youtube",
+   "mapo",
+   "camera"
   ],
   "readOnly": true,
   "passcode": "241011",
