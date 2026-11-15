@@ -1,0 +1,9 @@
+wrangler.jsonc
+.assetsignore
+README.md
+.git
+.gitignore
+node_modules
+worker.js
+wrangler.comments.jsonc
+COMMENTS-SETUP.md
