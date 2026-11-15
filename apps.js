@@ -694,7 +694,7 @@ K.apps.settings = { mount(root,p,ctl){
   ctl.bar(true);
   const nav=K.makeNav(root); const main=K.page(); main.classList.add('ss'); const sc=h('div',{class:'scroll'}); main.append(padTop(),sc);
   const U=()=>S().ui, owner=()=>U().ownerName||D.settings.ownerName||'박성진';
-  const EMAIL='';
+  const EMAIL='briankang@gmail.com';
   const CH='<svg width="8" height="14" viewBox="0 0 8 14"><path d="M1 1l6 6-6 6" fill="none" stroke="#c4c4c9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   const G=(d,o={})=>`<svg viewBox="${o.vb||'0 0 24 24'}" width="21" height="21" fill="${o.fill===undefined?'#fff':o.fill}" stroke="${o.st||'none'}" stroke-width="${o.sw||2}" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
   const S2=(d,sw=1.9)=>G(d,{fill:'none',st:'#fff',sw});
@@ -744,7 +744,7 @@ K.apps.settings = { mount(root,p,ctl){
   const tg=(key,after)=>{ const t=h('div',{class:'tg'+(U()[key]?' on':'')}); t.onclick=e=>{ e.stopPropagation(); U()[key]=!U()[key]; t.classList.toggle('on'); K.save(); K.refreshStatus&&K.refreshStatus(); after&&after(U()[key]); }; return t; };
   const row=(icon,label,val,fn,cls)=>h('div',{class:'ssr'+(fn?' go':'')+(cls?' '+cls:''),onclick:fn||null},icon||null,h('div',{class:'ssl'},label),val===undefined?null:h('div',{class:'ssv'},val),(fn||fn===null)?h('i',{class:'ssc',html:CH}):null);
   const card=(...rows)=>h('div',{class:'ssg'+(rows.some(r=>r&&r.querySelector&&r.querySelector('.ssi'))?' ic':'')},...rows);
-  const wifiName=()=>U().wifi?'':'꺼짐';
+  const wifiName=()=>U().wifi?'mangwon_rem_1704':'꺼짐';
   const note=t=>h('div',{class:'ssn'},t);
   const head=t=>h('div',{class:'ssh'},t);
   const simple=(label,val)=>row(null,label,val);
@@ -789,7 +789,7 @@ K.apps.settings = { mount(root,p,ctl){
     const box=h('div'); 
     const draw=()=>{ box.innerHTML=''; box.append(
       card(h('div',{class:'ssr'},h('div',{class:'ssl'},'Wi-Fi'),tg('wifi',()=>{ draw(); const v=main.querySelector('[data-k="wifi"]'); if(v) v.textContent=wifiName(); }))),
-      ...(U().wifi?[head('네트워크'),card(h('div',{class:'ssr'},h('i',{class:'ssck',html:ICON.check}),h('div',{class:'ssl'},''),h('div',{class:'ssv ic2 wfi',html:'<svg viewBox="0 0 24 24" width="15" height="15" fill="#3c3c43" fill-opacity=".62"><path d="M7 10V8a5 5 0 0 1 10 0v2h.500A1.500 1.500 0 0 1 19 11.500v8a1.500 1.500 0 0 1-1.500 1.500h-11A1.500 1.500 0 0 1 5 19.500v-8A1.500 1.500 0 0 1 6.500 10zm2 0h6V8a3 3 0 0 0-6 0z"/></svg><img src="photos/fav/wifi-gray.png" width="19" height="16" style="display:block">'}),infoBtn(()=>{})),row(null,'다른 네트워크…',undefined)),note('알려진 네트워크에 자동으로 연결됩니다.')]:[note('Wi-Fi를 켜면 근처 네트워크를 찾아 연결합니다.')])); };
+      ...(U().wifi?[head('네트워크'),card(h('div',{class:'ssr'},h('i',{class:'ssck',html:ICON.check}),h('div',{class:'ssl'},'mangwon_rem_1704'),h('div',{class:'ssv ic2 wfi',html:'<svg viewBox="0 0 24 24" width="15" height="15" fill="#3c3c43" fill-opacity=".62"><path d="M7 10V8a5 5 0 0 1 10 0v2h.500A1.500 1.500 0 0 1 19 11.500v8a1.500 1.500 0 0 1-1.500 1.500h-11A1.500 1.500 0 0 1 5 19.500v-8A1.500 1.500 0 0 1 6.500 10zm2 0h6V8a3 3 0 0 0-6 0z"/></svg><img src="photos/fav/wifi-gray.png" width="19" height="16" style="display:block">'}),infoBtn(()=>{})),row(null,'다른 네트워크…',undefined)),note('알려진 네트워크에 자동으로 연결됩니다.')]:[note('Wi-Fi를 켜면 근처 네트워크를 찾아 연결합니다.')])); };
     draw(); s.append(box);
   });
   /* ---- Bluetooth ---- */
@@ -973,7 +973,7 @@ K.apps.clock = { mount(root,p,ctl){
   let tab='alarm';
   const ICO={world:'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM2.500 12h19M12 2c3 3 4.500 6.500 4.500 10S15 19 12 22M12 2C9 5 7.500 8.500 7.500 12S9 19 12 22',alarm:'M12 6v6l4 2M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16zM4 6l3-3M20 6l-3-3',stop:'M12 5a8 8 0 1 0 0 16 8 8 0 0 0 0-16zM12 9v5M9.500 2h5M12 2v3',timer:'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 7v5l-3 3'};
   const TABS=[['world','세계 시각'],['alarm','알람'],['stop','스톱워치'],['timer','타이머']];
-  const CITIES=[['런던','영국','Europe/London']];
+  const CITIES=[['토론토','캐나다','America/Toronto'],['아테네','그리스','Europe/Athens'],['런던','영국','Europe/London']];
   const off=(tz,d)=>{ const f=z=>Date.parse(d.toLocaleString('en-US',{timeZone:z})); return Math.round((f(tz)-f('Asia/Seoul'))/36e5); };
   const dayStr=(tz,d)=>d.toLocaleDateString('en-CA',{timeZone:tz});
   const big=t=>h('div',{class:'cl-large'},t);
@@ -1477,7 +1477,7 @@ K.apps.youtube = { mount(root,p,ctl){
   const fmtV=n=>n>=1e8?(n/1e8).toFixed(1).replace(/\.0$/,'')+'억':n>=1e4?(n>=1e5?Math.round(n/1e4):(n/1e4).toFixed(1).replace(/\.0$/,''))+'만':n>=1e3?(n/1e3).toFixed(1).replace(/\.0$/,'')+'천':String(n);
   const AGO=['6일 전','2주 전','3주 전','1개월 전','2개월 전','5개월 전','1년 전','2년 전'];
   const COL=['#7aa7ff','#3ddc97','#ffb86b','#c792ea','#ff7a90','#5fd0d6'];
-  const Y=D.youtube||{}, me=Y.me||{name:'박성진',handle:'@'+((D.instagram&&D.instagram.handle)||'kangyh').replace(/^@/,'')};
+  const Y=D.youtube||{}, me=Y.me||{name:'강영현',handle:'@'+((D.instagram&&D.instagram.handle)||'kangyh').replace(/^@/,'')};
   const vids=(Y.videos||D.playlist.tracks.map(t=>({t:t.t,ch:t.a,cv:t.cv,dur:t.d||'3:30'}))).map(v=>{ const hs=hash(v.t+(v.ch||'')); return {...v, views:v.views!=null?v.views:(hs%97)*10000+(hs%9)*1000+20000, ago:v.ago||AGO[hs%AGO.length], col:COL[hs%COL.length], likes:v.likes!=null?v.likes:(hs%900)+30, cm:(hs%40)+2}; });
   const go=v=>{ if(v.jm&&K.jmSawVideo) K.jmSawVideo(); if(v.watch){ wv=v; render(); return; } if(v.ytLink) window.open(v.ytLink,'_blank','noopener'); };   // 유튜브 안의 영상은 data.js에서 ytLink를 직접 적은 것만 열려요 (안 적으면 눌러도 아무 일 없음)
   const avatar=(v,sz)=>h('i',{class:'yav',style:`width:${sz}px;height:${sz}px;background:${v.col||'#7aa7ff'};font-size:${Math.round(sz*.42)}px`},(v.ch||'?').trim().charAt(0).toUpperCase());
@@ -2207,7 +2207,7 @@ K.apps.mail = { mount(root,p,ctl){
       h('div',{class:'mx-top two'},h('button',{class:'mx-pill',onclick:()=>nav.pop(),html:bk}),h('div',{class:'mx-pill ud',html:ICN('<path d="M6 15l6-6 6 6"/>')+ICN('<path d="M6 9l6 6 6-6"/>')})),
       h('div',{class:'scroll mx-sc mx-dt'},
         h('div',{class:'mx-from'},h('div',{class:'mx-av'},ini),h('div',{class:'mx-ft'},h('b',{},m.from),h('span',{class:'mx-to',onclick:()=>{ tt.classList.toggle('open'); ar.classList.toggle('open'); }},'받는 사람: ',tt,ar)),h('small',{},m.full)),
-        ...(m.readAt?[h('div',{class:'mx-rd'},h('span',{html:'<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#3d8bf2" stroke-width="2.400" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13l4.500 4.500L14 9M10 15.500l1.500 2L21 7"/></svg>'}),h('b',{},m.to+'님이 읽음'),h('small',{},m.readAt))]:[]),
+        ...((m.readAt&&!m.recv)?[h('div',{class:'mx-rd'},h('span',{html:'<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#3d8bf2" stroke-width="2.400" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13l4.500 4.500L14 9M10 15.500l1.500 2L21 7"/></svg>'}),h('b',{},m.to+'님이 읽음'),h('small',{},m.readAt))]:[]),
         h('div',{class:'mx-sub'},m.subject),
         h('div',{class:'mx-body'},m.body),
         h('div',{style:'height:160px'})),
@@ -2224,16 +2224,17 @@ K.apps.mail = { mount(root,p,ctl){
       h('div',{class:'scroll mx-sc'},
         h('div',{class:'mx-h'},h('b',{},title),h('small',{},D.settings.mailAccount||'')),
         h('div',{class:'mx-hair'}),
-        ...list.map((m,mi)=>{ const dot=h('i',{class:'mx-dot'}); const isUn=()=>m.unread&&!readSet().includes(mi); if(!isUn()) dot.style.visibility='hidden'; return h('div',{class:'mx-mail',onclick:()=>{ if(isUn()){ markRead(mi); dot.style.visibility='hidden'; } pDetail(m); }},dot,h('div',{class:'mx-ava',html:BLD}),h('div',{class:'mx-mt'},h('div',{class:'l1'},h('b',{},m.to),h('small',{},m.readAt?h('span',{class:'mx-rd1',html:'<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#3d8bf2" stroke-width="2.400" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13l4.500 4.500L14 9M10 15.500l1.500 2L21 7"/></svg>'}):'',m.date)),h('div',{class:'l2'},m.subject),h('div',{class:'l3'},m.body.replace(/\n+/g,' ')))); }),
+        ...list.map((m,mi)=>{ const dot=h('i',{class:'mx-dot'}); const isUn=()=>m.unread&&!readSet().includes(mi); if(!isUn()) dot.style.visibility='hidden'; return h('div',{class:'mx-mail',onclick:()=>{ if(isUn()){ markRead(mi); dot.style.visibility='hidden'; } pDetail(m); }},dot,h('div',{class:'mx-ava',html:BLD}),h('div',{class:'mx-mt'},h('div',{class:'l1'},h('b',{},m.recv?m.from:m.to),h('small',{},(m.readAt&&!m.recv)?h('span',{class:'mx-rd1',html:'<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#3d8bf2" stroke-width="2.400" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13l4.500 4.500L14 9M10 15.500l1.500 2L21 7"/></svg>'}):'',m.date)),h('div',{class:'l2'},m.subject),h('div',{class:'l3'},m.body.replace(/\n+/g,' ')))); }),
         h('div',{style:'height:160px'})),
       h('div',{class:'mx-tool'},h('div',{class:'mx-fab l',html:ICN('<path d="M4 7h16M7 12h10M10 17h4"/>')}),h('div',{class:'mx-search'},h('span',{html:ICN('<circle cx="11" cy="11" r="6.500"/><path d="M16 16l4 4"/>')}),h('em',{},'검색'),h('span',{html:ICN('<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.500 11a6.500 6.500 0 0 0 13 0M12 17.500V21"/>')})),h('div',{class:'mx-fab r',html:COMPOSE})),
       h('div',{class:'mx-new'},'새로운 메시지'));
     nav.push(pg2);
   };
-  const arw=h('span',{class:'mx-ar',html:down}); const fold=rows(ROWS,{'보낸 편지함':()=>pSent()});
+  const recvList=()=>D.receivedMails||[];
+  const arw=h('span',{class:'mx-ar',html:down}); const fold=rows(ROWS,{'보낸 편지함':()=>pSent(),'받은 편지함':()=>pSent('받은 편지함',recvList)});
   const sc=h('div',{class:'scroll mx-sc'},
     h('div',{class:'mx-h'},h('b',{},'메일상자'),h('small',{},'지금 업데이트됨')),
-    rows(TOP),
+    rows(TOP,{'모든 받은 편지함':()=>pSent('모든 받은 편지함',recvList),'Gmail':()=>pSent('받은 편지함',recvList)}),
     h('div',{class:'mx-acc gm'},h('span',{},'Gmail'),h('span',{html:right})),
     h('div',{class:'mx-acc tgl',onclick:()=>{ fold.classList.toggle('shut'); arw.classList.toggle('shut'); }},h('span',{},D.settings.mailAccount||''),arw),
     fold,
@@ -2279,14 +2280,14 @@ K.apps.mapo = { mount(root,p,ctl){
      <div class="mp-wl"><small>Welcome,</small><b>105동 1704호</b></div>
      <div class="mp-hero"><img src="photos/mapo-hero.jpg" alt=""></div>
      <div class="mp-tg2">
-       ${tile('dead','관리비 조회/납부','','wide')}
+       ${tile('fee','관리비 조회/납부','<span class="am">284,500<small>원</small></span>','wide')}
        ${tile('dead','커뮤니티 예약','<span class="ic">'+S('<rect x="3" y="6" width="18" height="11" rx="3"/><path d="M3 12h18M7 17v2.500M17 17v2.500"/>',46,'#8a9aa8',1.5)+'</span>')}
-       ${tile('dead','단지 공지사항','<span class="ls"></span>')}
-       ${tile('dead','택배 도착','<span class="ls"></span>')}
+       ${tile('notice','단지 공지사항','<span class="ls"><i>산책로 정비 안내</i><i>주차장 보수 공사</i><i>105동 소독 안내</i></span>')}
+       ${tile('svc','택배 도착','<span class="ls"><i>택배 도착 : 1건</i></span>')}
        ${tile('dead','인근 편의시설','<span class="ic">'+S('<path d="M4 20V10l8-5 8 5v10z"/><path d="M9 20v-6h6v6"/>',46,'#8a9aa8',1.5)+'</span>')}
      </div>
      <div class="mp-card mp-park-c"><div class="mp-h"><span>등록 차량 실시간 주차 현황</span><u>실시간 연동</u></div>
-       ${OUT?'<div class="mp-park"><div class="mp-pl"></div><div><b>BMW X7</b><small>출차 완료<br>(정문 출구)</small></div><time>오늘 '+OUT+' 출차</time></div></div>':'<div class="mp-park"><div class="mp-pl"></div><div><b>BMW X7</b><small></small></div><time></time></div></div>'}
+       ${OUT?'<div class="mp-park"><div class="mp-pl">776더</div><div><b>BMW X7 (세대주)</b><small>출차 완료<br>(정문 출구)</small></div><time>오늘 '+OUT+' 출차</time></div></div>':'<div class="mp-park"><div class="mp-pl">776더</div><div><b>BMW X7 (세대주)</b><small>지하 2층 주차중<br>(A구역 14번)</small></div><time>어제 19:20 입차</time></div></div>'}
    </section>
 
    <section class="mp-pg" id="mp-comm">
@@ -2358,7 +2359,7 @@ K.apps.mapo = { mount(root,p,ctl){
      <button class="mp-cta" data-toast="관리비 납부는 세대주만 할 수 있어요">신용카드 간편결제 / 가상계좌 납부</button>
    </section>
   </main>
-  <nav class="mp-tabs">${TABS.slice(0,1).map((t,i)=>`<button class="mp-tab${i?'':' on'}" ${t[0]==='comm'?'data-dead':'data-go="'+t[0]+'"'}>${t[2]}${t[1]}</button>`).join('')}</nav>
+  <nav class="mp-tabs">${TABS.map((t,i)=>`<button class="mp-tab${i?'':' on'}" ${t[0]==='comm'?'data-dead':'data-go="'+t[0]+'"'}>${t[2]}${t[1]}</button>`).join('')}</nav>
   <div class="mp-toast" id="mp-toast"></div>
   <div class="mp-splash" id="mp-splash"><b>마포한강래미안</b></div>`;
   pg.innerHTML=HTML;
