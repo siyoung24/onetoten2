@@ -117,7 +117,7 @@ function widgets(){
   const wic = (/맑음/.test(w.cond||''))?h('span',{style:'display:inline-flex;vertical-align:-4px;margin-right:6px',html:SUNI}):((w.emoji||'⛅')+' ');
   const w2 = h('div',{class:'wd s',onclick:()=>{ K.loadWeather(); K.openApp('weather'); },style:'background:linear-gradient(180deg,#335a8e,#5a82b3 60%,#86a4c8);padding:15px;cursor:pointer'},
     h('div',{style:'font-size:15px;font-weight:600;white-space:nowrap'},w.city,h('span',{html:LOC})), h('div',{style:'font-size:52px;font-weight:300;margin-top:0;line-height:1.1;letter-spacing:-1px'},w.temp+'°'), h('div',{style:'position:absolute;bottom:13px;left:15px;font-size:13px;line-height:1.35;font-weight:500'},wic,h('br'),w.cond,h('br'),'최고:'+w.hi+'° 최저:'+w.lo+'°'));
-  const tr = K.allTracks[K.music.i];
+  const tr = K.allTracks[K.music.i]||{t:'',a:''};
   const prog = h('i',{style:'display:block;height:100%;width:'+(K.music.t||0)+'%;background:#fff;border-radius:2px'});
   const ppb = h('button',{style:'font-size:22px;color:#fff',onclick:e=>{e.stopPropagation();K.togglePlay();K.refreshHome();}},K.music.playing?'⏸':'▶︎');
   const w3 = h('div',{class:'wd m',onclick:()=>K.openYT(),style:'background:linear-gradient(120deg,#2b1f3d,#5a2f55);padding:14px;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer'},
@@ -167,8 +167,9 @@ function todayPage(){
   return h('div',{class:'pg tdy'},h('div',{class:'wrow'},wBat,wWea),h('div',{class:'wrow'},wSt),h('div',{class:'wrow'},wMap,wCal));
 }
 K.refreshHome = function(){
+  const x = widgets();
   home.innerHTML='';
-  const p1=h('div',{class:'pg'}, h('div',{class:'grid'},PAGE1.map(i=>appIcon(i))));
+  const p1=h('div',{class:'pg'}, h('div',{class:'wrow'},x.w2,K.allTracks[K.music.i]?x.w1:null), h('div',{class:'grid'},PAGE1.map(i=>appIcon(i))));
   const p2=h('div',{class:'pg'}, h('div',{class:'grid'},PAGE2.map(i=>appIcon(i))));
   const pages=h('div',{id:'pages'},p1,p2);
   if(!K.homeIdx || K.homeIdx>1) K.homeIdx=0;
