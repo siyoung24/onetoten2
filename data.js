@@ -4,7 +4,7 @@
    - 연락처: 소설에 나오는 이름만(번호는 모르므로 비움)
    - 나머지는 강영현의 폰 내용 중 영현 기준이 아닌 것만 사용 */
 window.PHONE_DATA = {
- "version": 8,
+ "version": 9,
  "triggers": {},
  "sentMails": [],
  "settings": {
@@ -45,7 +45,8 @@ window.PHONE_DATA = {
    "settings",
    "youtube",
    "mapo",
-   "camera"
+   "camera",
+   "calendar"
   ],
   "readOnly": true,
   "passcode": "241011",
@@ -2247,21 +2248,408 @@ window.PHONE_DATA = {
  "notes": [],
  "events": [
   {
+   "day": -706,
+   "time": "00:00",
+   "end": "",
+   "title": "dive-fool 행사",
+   "place": "",
+   "color": "#007aff",
+   "allDay": true
+  },
+  {
+   "day": -692,
+   "time": "00:00",
+   "end": "",
+   "title": "영현 생일",
+   "place": "",
+   "color": "#ff2d55",
+   "allDay": true
+  },
+  {
+   "day": -687,
+   "time": "00:00",
+   "end": "",
+   "title": "크리스마스이브",
+   "place": "",
+   "color": "#34c759",
+   "allDay": true
+  },
+  {
+   "day": -686,
+   "time": "00:00",
+   "end": "",
+   "title": "크리스마스",
+   "place": "",
+   "color": "#34c759",
+   "allDay": true
+  },
+  {
+   "day": -664,
+   "time": "00:00",
+   "end": "",
+   "title": "성진 생일",
+   "place": "",
+   "color": "#ff9500",
+   "allDay": true
+  },
+  {
+   "day": -511,
+   "time": "00:00",
+   "end": "",
+   "title": "한국 국제 도서전",
+   "place": "코엑스",
+   "color": "#5856d6",
+   "allDay": true
+  },
+  {
+   "day": -510,
+   "time": "00:00",
+   "end": "",
+   "title": "한국 국제 도서전",
+   "place": "코엑스",
+   "color": "#5856d6",
+   "allDay": true
+  },
+  {
+   "day": -509,
+   "time": "00:00",
+   "end": "",
+   "title": "한국 국제 도서전",
+   "place": "코엑스",
+   "color": "#5856d6",
+   "allDay": true
+  },
+  {
+   "day": -508,
+   "time": "00:00",
+   "end": "",
+   "title": "한국 국제 도서전",
+   "place": "코엑스",
+   "color": "#5856d6",
+   "allDay": true
+  },
+  {
+   "day": -507,
+   "time": "00:00",
+   "end": "",
+   "title": "한국 국제 도서전",
+   "place": "코엑스",
+   "color": "#5856d6",
+   "allDay": true
+  },
+  {
+   "day": -327,
+   "time": "00:00",
+   "end": "",
+   "title": "영현 생일",
+   "place": "",
+   "color": "#ff2d55",
+   "allDay": true
+  },
+  {
+   "day": -322,
+   "time": "00:00",
+   "end": "",
+   "title": "크리스마스이브",
+   "place": "",
+   "color": "#34c759",
+   "allDay": true
+  },
+  {
+   "day": -321,
+   "time": "00:00",
+   "end": "",
+   "title": "크리스마스",
+   "place": "",
+   "color": "#34c759",
+   "allDay": true
+  },
+  {
+   "day": -299,
+   "time": "00:00",
+   "end": "",
+   "title": "성진 생일",
+   "place": "",
+   "color": "#ff9500",
+   "allDay": true
+  },
+  {
+   "day": -140,
+   "time": "00:00",
+   "end": "",
+   "title": "한국 국제 도서전",
+   "place": "코엑스",
+   "color": "#5856d6",
+   "allDay": true
+  },
+  {
+   "day": -139,
+   "time": "00:00",
+   "end": "",
+   "title": "한국 국제 도서전",
+   "place": "코엑스",
+   "color": "#5856d6",
+   "allDay": true
+  },
+  {
+   "day": -138,
+   "time": "00:00",
+   "end": "",
+   "title": "한국 국제 도서전",
+   "place": "코엑스",
+   "color": "#5856d6",
+   "allDay": true
+  },
+  {
+   "day": -137,
+   "time": "00:00",
+   "end": "",
+   "title": "한국 국제 도서전",
+   "place": "코엑스",
+   "color": "#5856d6",
+   "allDay": true
+  },
+  {
+   "day": -136,
+   "time": "00:00",
+   "end": "",
+   "title": "한국 국제 도서전",
+   "place": "코엑스",
+   "color": "#5856d6",
+   "allDay": true
+  },
+  {
+   "day": -30,
+   "time": "00:00",
+   "end": "",
+   "title": "출장",
+   "place": "런던",
+   "color": "#af52de",
+   "allDay": true
+  },
+  {
+   "day": -29,
+   "time": "00:00",
+   "end": "",
+   "title": "출장",
+   "place": "런던",
+   "color": "#af52de",
+   "allDay": true
+  },
+  {
+   "day": -28,
+   "time": "00:00",
+   "end": "",
+   "title": "출장",
+   "place": "런던",
+   "color": "#af52de",
+   "allDay": true
+  },
+  {
+   "day": -27,
+   "time": "00:00",
+   "end": "",
+   "title": "출장",
+   "place": "런던",
+   "color": "#af52de",
+   "allDay": true
+  },
+  {
+   "day": -26,
+   "time": "00:00",
+   "end": "",
+   "title": "출장",
+   "place": "런던",
+   "color": "#af52de",
+   "allDay": true
+  },
+  {
+   "day": -25,
+   "time": "00:00",
+   "end": "",
+   "title": "출장",
+   "place": "런던",
+   "color": "#af52de",
+   "allDay": true
+  },
+  {
+   "day": -24,
+   "time": "00:00",
+   "end": "",
+   "title": "출장",
+   "place": "런던",
+   "color": "#af52de",
+   "allDay": true
+  },
+  {
+   "day": -23,
+   "time": "00:00",
+   "end": "",
+   "title": "출장",
+   "place": "런던",
+   "color": "#af52de",
+   "allDay": true
+  },
+  {
+   "day": -22,
+   "time": "00:00",
+   "end": "",
+   "title": "출장",
+   "place": "런던",
+   "color": "#af52de",
+   "allDay": true
+  },
+  {
+   "day": -21,
+   "time": "00:00",
+   "end": "",
+   "title": "출장",
+   "place": "런던",
+   "color": "#af52de",
+   "allDay": true
+  },
+  {
+   "day": -6,
+   "time": "00:00",
+   "end": "",
+   "title": "dive-fool 행사",
+   "place": "",
+   "color": "#007aff",
+   "allDay": true
+  },
+  {
+   "day": 8,
+   "time": "00:00",
+   "end": "",
+   "title": "작가 미팅",
+   "place": "",
+   "color": "#007aff",
+   "allDay": true
+  },
+  {
+   "day": 10,
+   "time": "00:00",
+   "end": "",
+   "title": "주말 데이트",
+   "place": "",
+   "color": "#ff3b30",
+   "allDay": true
+  },
+  {
+   "day": 22,
+   "time": "00:00",
+   "end": "",
+   "title": "신간 홍보 촬영",
+   "place": "",
+   "color": "#007aff",
+   "allDay": true
+  },
+  {
+   "day": 29,
+   "time": "00:00",
+   "end": "",
+   "title": "외부 미팅",
+   "place": "",
+   "color": "#007aff",
+   "allDay": true
+  },
+  {
+   "day": 31,
+   "time": "19:00",
+   "end": "",
+   "title": "친구들과 저녁",
+   "place": "",
+   "color": "#ff3b30",
+   "allDay": false
+  },
+  {
    "day": 38,
    "time": "00:00",
    "end": "",
-   "title": "강영현 생일",
+   "title": "영현 생일",
    "place": "",
    "color": "#ff2d55",
+   "allDay": true
+  },
+  {
+   "day": 43,
+   "time": "00:00",
+   "end": "",
+   "title": "크리스마스이브",
+   "place": "",
+   "color": "#34c759",
+   "allDay": true
+  },
+  {
+   "day": 44,
+   "time": "00:00",
+   "end": "",
+   "title": "크리스마스",
+   "place": "",
+   "color": "#34c759",
    "allDay": true
   },
   {
    "day": 66,
    "time": "00:00",
    "end": "",
-   "title": "박성진 생일",
+   "title": "성진 생일",
    "place": "",
    "color": "#ff9500",
+   "allDay": true
+  },
+  {
+   "day": 87,
+   "time": "00:00",
+   "end": "",
+   "title": "가족 방문",
+   "place": "",
+   "color": "#a2845e",
+   "allDay": true
+  },
+  {
+   "day": 264,
+   "time": "00:00",
+   "end": "",
+   "title": "여름휴가",
+   "place": "",
+   "color": "#30b0c7",
+   "allDay": true
+  },
+  {
+   "day": 265,
+   "time": "00:00",
+   "end": "",
+   "title": "여름휴가",
+   "place": "",
+   "color": "#30b0c7",
+   "allDay": true
+  },
+  {
+   "day": 266,
+   "time": "00:00",
+   "end": "",
+   "title": "여름휴가",
+   "place": "",
+   "color": "#30b0c7",
+   "allDay": true
+  },
+  {
+   "day": 267,
+   "time": "00:00",
+   "end": "",
+   "title": "여름휴가",
+   "place": "",
+   "color": "#30b0c7",
+   "allDay": true
+  },
+  {
+   "day": 268,
+   "time": "00:00",
+   "end": "",
+   "title": "여름휴가",
+   "place": "",
+   "color": "#30b0c7",
    "allDay": true
   }
  ],
